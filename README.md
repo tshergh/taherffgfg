@@ -1,4 +1,3 @@
-<img src="https://user-images.githubusercontent.com/53673312/198794972-db2dbd96-214d-4ffc-ba90-b22ad42276e8.jpg" align="right" alt="nabilanavab" width="400px" height="400px">
 
 > **Note** 
 > : Something big awaits you. Don't forget to star the project
@@ -112,7 +111,7 @@ the extracted PDF-images..</em>
     ╰────Railways──〄
 
 ### deploy on heroku:
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/tshergh/tahet44546yy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/tshergh/taherffgfg)
 
 ## Project setUp:
 
