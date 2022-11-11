@@ -88,7 +88,7 @@ HELP_CMD = {
 /delete: PDF qilayotga\n/txt2pdf: Matndan PDF yaratish""",
     "adminHelp" : """\n\n\n[ADMIN BUYRUQLARI XABARI]:\n
 /send: foydalanuvchiga shaxsiy xabar yuborish uchun""",
-    "footerHelp" : f"""\n\n\nManba-kodi: [file conveter]({str(settings.SOURCE_CODE)})
+    "footerHelp" : f"""\n\n\nManba-kodi: [i 💜 PDF]({str(settings.SOURCE_CODE)})
 Bot: @azik_pdfbot 💎\n[Qo'llab quvvatlash]({settings.OWNED_CHANNEL})""",
     "CB" : {"⚠️ YOPISH ⚠️" : "close|all"}
 }
@@ -184,7 +184,7 @@ document = {
     "takeTime" : PROGRESS['takeTime'], "upFile" : PROGRESS['upFile'], "dlImage" : PROGRESS['dlImage'],
     "big" : """Haddan tashqari yuk tufayli, admin pdf fayllar uchun {}mb ni cheklaydi 🙇
 \n`Iltimos, menga {}mb hajmidan kichikroq fayl yuboring` 🙃""",
-    "bigCB" : {"💎 2 Gb qo'llab-quvvatlash botini yarating 💎" : "https://t.me/i2pdfbotchannel"},
+    "bigCB" : {"💎 2 Gb qo'llab-quvvatlash botini yarating 💎" : "https://github.com/nabilanavab/ilovepdf"},
     "imageAdded" : """`Qo'shildi {} sahifa sizning PDFingizga..`🤓\n\nFaylNomi: `{}.pdf`""",
     "setHdImg" : """Endi PDF formatiga tasvir HD rejimida 😈""",
     "setDefault" : {"« Standart sifatga qaytish «" : "close|hd"},
@@ -379,5 +379,5 @@ cbAns = [
 ]
 
 inline_query = {
-    "TOP" : { "Endi tilni Tanlang" : "nabilanavab" }, "capt" : "TILI SOZLASH ⚙️", "des" : "By: @ta_ja199 ❤"
+    "TOP" : { "Endi tilni Tanlang" : "nabilanavab" }, "capt" : "TILI SOZLASH ⚙️", "des" : "By: @nabilanavab ❤"
 }

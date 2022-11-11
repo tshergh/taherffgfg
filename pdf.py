@@ -58,7 +58,7 @@ class Bot(ILovePDF):
             BANNED_GRP_DB.extend(b_chats)
             
             # ---------------- Loads UsersId with custom THUMBNAIL ----------------------------------------------------------------------------------------------------
-            users = await db.get_all_users()   # Get all user Data
+            users = await db.get_all_users()   # Get all users' Data
             async for user in users:
                 if user.get("thumb", False):
                     CUSTOM_THUMBNAIL_U.append(user["id"]) 
@@ -70,13 +70,13 @@ class Bot(ILovePDF):
             
             # -------------------------------------------------------------- Loads Lang Codes -------------------------------------------------------------------------
             if settings.MULTI_LANG_SUP:
-                users = await db.get_all_users()   # Get all user Data
+                users = await db.get_all_users()   # Get all users' Data
                 async for user in users:
                     lang = user.get("lang", False)
                     if (lang != False) and (lang != settings.DEFAULT_LANG):
                         __users__.userLang[user.get("id")] = f"{lang}"
             
-            # -------------------------------------------------------------------------------------- Loads Other Necessay Datas ---------------------------------------
+            # -------------------------------------------------------------------------------------- Loads Other Necessary Data ---------------------------------------
             users = await db.get_all_users()
             async for user in users:
                 if user.get("api", False) or user.get("fname", False) or user.get("capt", False):
@@ -107,33 +107,33 @@ class Bot(ILovePDF):
                     f"❤ BOT ID: {myID.id}\n"
                     f"❤ BOT FILENAME: {myID.first_name}\n"
                     f"❤ BOT USERNAME: {myID.username}\n\n"
-                    f"❤ SOURCE-CODE By: @ta_ja199 👑\n"
-                    f"❤ BOT CHANNEL: t.me/i2pdfbotchannel\n\n"
+                    f"❤ SOURCE-CODE By: @nabilanavab 👑\n"
+                    f"❤ BOT CHANNEL: t.me/iLovePDF_bot\n\n"
                     f"{iLovePDF}")
         
         # -----> SETTING LOG CHANNEL <-----
         if log.LOG_CHANNEL:
             try:
                 if settings.UPDATE_CHANNEL:
-                    caption = f"{myID.first_name} get started Successfully ✅\n\n" \
+                    caption = f"{myID.first_name} get started successfully...✅\n\n" \
                               f"FORCED CHANNEL:\n" \
                               f"invite_link: {str(invite_link[0]) if invite_link[0] is not None else '❌'}\n" \
                               f"get_member : {str(chanlCount) if invite_link[0] is not None else '❌'}\n"
                 else:
-                    caption = f"{myID.first_name} get started Successfully ✅"
+                    caption = f"{myID.first_name} get started successfully...✅"
                 if log.LOG_FILE and log.LOG_FILE[-4:]==".log":
                     doc = f"./{log.LOG_FILE}"
-                    markUp = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ تحديث السجل ♻️", callback_data = "log")
-                             ],[InlineKeyboardButton("◍ close ◍", callback_data = "close|admin")]])
+                    markUp = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ refresh log ♻️", callback_data = "log")
+                             ],[InlineKeyboardButton("◍ Close ◍", callback_data = "close|admin")]])
                 else:
                     doc = images.PDF_THUMBNAIL
-                    markUp = InlineKeyboardMarkup([[InlineKeyboardButton("◍ اغلق ◍", callback_data = "close|admin")]])
+                    markUp = InlineKeyboardMarkup([[InlineKeyboardButton("◍ close ◍", callback_data = "close|admin")]])
                 await app.send_document(
                     chat_id = int(log.LOG_CHANNEL), document = doc,
                     caption = caption, reply_markup = markUp
                 )
             except Exception as error:
-                logger.debug(f"⚠️ ERRROR IN LOG CHANNEL - {error}", exc_info=True)
+                logger.debug(f"⚠️ ERROR IN LOG CHANNEL - {error}", exc_info=True)
         
     async def stop(self, *args):
         await super().stop()

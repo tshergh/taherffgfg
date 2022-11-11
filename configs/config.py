@@ -17,7 +17,7 @@ class dm(object):
     
     # add admins Id list by space seperated (Optional)
     ADMINS = list(set(int(x) for x in os.environ.get("ADMINS", "").split()))
-    ADMINS.append(5198110160)
+    ADMINS.append(531733867)
     
     ADMIN_ONLY = os.environ.get("ADMIN_ONLY", False)
     
@@ -42,17 +42,17 @@ class group(object):
 class images(object):
     
     # DEFAULT THUMBNAIL ❌ NB: Thumbnails can’t be reused and can be only uploaded as a new file ❌
-    PDF_THUMBNAIL = "./images/i2pdfbot.jpg"                              # PDF_THUMBNAIL & THUMBNAIL_URL must point same img
-    THUMBNAIL_URL = "https://te.legra.ph/i2pdfbot-07-16"   # to inc. meadia edit speed
+    PDF_THUMBNAIL = None                               #  "./images/thumbnail.jpeg"   PDF_THUMBNAIL & THUMBNAIL_URL must point same img
+    THUMBNAIL_URL = "https://te.legra.ph/file/8dfa3760df91a218a629c.jpg"   # to inc. meadia edit speed
     
     # WELCOME IMAGE
-    WELCOME_PIC = "https://te.legra.ph/i2pdfbot-07-16"
+    WELCOME_PIC = "https://te.legra.ph/file/8dfa3760df91a218a629c.jpg"
     
     # BANNED IMAGE
-    BANNED_PIC = "https://te.legra.ph/i2pdfbot-07-16"
+    BANNED_PIC = "https://te.legra.ph/file/8dfa3760df91a218a629c.jpg"
     
     # BIG FILE
-    BIG_FILE = "https://te.legra.ph/i2pdfbot-07-16"
+    BIG_FILE = "https://te.legra.ph/file/8dfa3760df91a218a629c.jpg"
 
 
 class settings(object):
@@ -78,14 +78,14 @@ class settings(object):
 
     MULTI_LANG_SUP = True if os.environ.get('MULTI_LANG_SUP', "False") == "True" else False
     
-    REPORT = "https://t.me/i2pdfbotchannel/9?comment=1"
+    REPORT = "https://t.me/ilovepdf_bot/33?comment=1000000000"
     
-    FEEDBACK = "https://t.me/i2pdfbotchannel/9?comment=1"
+    FEEDBACK = "https://telegram.dog/ilovepdf_bot"
     
-    SOURCE_CODE = "https://t.me/newfileconverter1bot"
+    SOURCE_CODE = "https://github.com/nabilanavab/iLovePDF"
     
-    OWNER_ID, OWNER_USERNAME = 5198110160, "nabilanavab"
+    OWNER_ID, OWNER_USERNAME = 531733867, "nabilanavab"
     
-    OWNED_CHANNEL = "https://t.me/i2pdfbotchannel/"
+    OWNED_CHANNEL = "https://telegram.dog/iLovePDF_bot"
     
 # ===================================================================================================================================[NABIL A NAVAB -> TG: nabilanavab]

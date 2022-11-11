@@ -28,11 +28,11 @@ async def setLang(bot, inline_query):
         await inline_query.answer(
             results = [
                 InlineQueryResultPhoto(
-                    photo_url = images.THUMBNAIL_URL, reply_markup = BUTTON1, title = "i2pdf",
+                    photo_url = images.THUMBNAIL_URL, reply_markup = BUTTON1, title = "i ❤ PDF",
                     input_message_content = InputTextMessageContent(
                           "set Language: 🌐\n\n"
                           f"i ❤ PDF\nBot: @{myID.username}\n"
-                          "Update Channel: @i2pdfbot"),
+                          "Update Channel: @ilovepdf_bot"),
                     caption = CHUNK['capt'], description = CHUNK['des']
                 )
             ]

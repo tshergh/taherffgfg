@@ -19,9 +19,9 @@ class log:
     
     LOG_FILE = os.environ.get("LOG_FILE", False)  # "nabilanavab.log"
     
-    LOG_TEXT = """#newUser @ta_ja199/i2pdfbot\n\nID: {}\nView Profile(عرض بروفايل): {}"""
+    LOG_TEXT = """#newUser @nabilanavab/ILovePDF\n\nID: {}\nView Profile: {}"""
     
-    LOG_TEXT_C = """#newChat @ta_ja199/i2pdfbot\n\nID: {}\nGroup Title: {}\nTotal Users(اجمالي يوزرات): {}\nUserName(اسم مستخدم): {}"""
+    LOG_TEXT_C = """#newChat @nabilanavab/ILovePDF\n\nID: {}\nGroup Title: {}\nTotal Users: {}\nUserName: {}"""
     
     async def newUser(bot, message, lang_code, referID):
         if message.chat.type != ChatType.PRIVATE:
@@ -33,7 +33,7 @@ class log:
                         await bot.send_message(
                             chat_id = int(log.LOG_CHANNEL),
                             text = log.LOG_TEXT_C.format(message.chat.id, message.chat.title, total, message.chat.username if message.chat.username else "❌"),
-                            reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("✅ حظر وفك حظر ✅", callback_data = f"banC|{message.chat.id}")]])
+                            reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("✅ B@N ✅", callback_data = f"banC|{message.chat.id}")]])
                         )
                     except Exception as e:
                         logger.debug(f"Error in new Group Log: {e}")
@@ -69,35 +69,35 @@ class log:
             if message.chat.type == ChatType.PRIVATE:
                 banUserCB = InlineKeyboardMarkup(
                     [[InlineKeyboardButton(
-                        "✅ حظر او فك حظر ✅",
+                        "✅ B@N USER ✅",
                         callback_data = f"banU|{file.chat.id}")
                     ]]
                 )
-                captionLOG = f"""#newFile @ta_ja199/i2pdfbot
+                captionLOG = f"""#newFile @nabilanavab/ILovePDF
 
-__chat type(نوع جات):__ `private(خاص) 👤`
-__username(يوزرنيم):__ {'@{}'.format(file.chat.username) if file.chat.username else " ❌ "}
-__user profile(بروفايل):__ [{file.chat.first_name}](tg://user?id={file.chat.id})
-__user ID(معرف):__ `{file.chat.id}`"""
+__chat type:__ `private 👤`
+__username:__ {'@{}'.format(file.chat.username) if file.chat.username else " ❌ "}
+__user profile:__ [{file.chat.first_name}](tg://user?id={file.chat.id})
+__user ID:__ `{file.chat.id}`"""
             
             else:
                 banUserCB = InlineKeyboardMarkup(
                     [[InlineKeyboardButton(
-                        "✅ حظر او فك حظر ✅",
+                        "✅ B@N USER ✅",
                         callback_data = f"banU|{message.from_user.id}" if not CB else f"banU|{CB}")
                     ],[
-                        InlineKeyboardButton("✅  حظر او فك حظر ✅",
+                        InlineKeyboardButton("✅ B@N CHAT ✅",
                         callback_data = f"banC|{message.chat.id}")
                     ]]
                 )
-                captionLOG = f"""#newFile @ta_ja199/i2pdfbot
+                captionLOG = f"""#newFile @nabilanavab/ILovePDF
 
-__chat type(نوع جات):__ `{message.chat.type} 👥`
-__chat title(عنو):__ `{message.chat.title}`
-__username(يوزرنيم):__ {'@{}'.format(message.chat.username) if {message.chat.username} is not None else " ❌ "}
+__chat type:__ `{message.chat.type} 👥`
+__chat title:__ `{message.chat.title}`
+__username:__ {'@{}'.format(message.chat.username) if {message.chat.username} is not None else " ❌ "}
 
-__user profile(يوزر فايل):__ {message.from_user.mention}
-__user ID(عرف):__ `{message.from_user.id}`"""
+__user profile:__ {message.from_user.mention}
+__user ID:__ `{message.from_user.id}`"""
             
             return await file.copy(
                 chat_id = int(log.LOG_CHANNEL), caption = captionLOG, reply_markup = banUserCB if dataBASE.MONGODB_URI else None

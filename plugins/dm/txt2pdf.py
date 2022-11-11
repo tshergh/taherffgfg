@@ -109,4 +109,4 @@ async def _pgSize(bot, callbackQuery):
         except Exception:
             pass
 
-#                                                                                  Telegram: @ta_ja199
+#                                                                                  Telegram: @nabilanavab
